@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style type="text/css">
+		.shooter {
+			width: 80px; 
+			position: absolute; 	
+			margin-left: 500px;
+		}
+		.box {
+			background-image: url(game.png);
+			height: 1000px; 
+			background-size: 100% 100%;
+		}
+		.zombies {
+			width: 80px; 
+			position: absolute;
+			margin-left: 1200px;
+		}
+		.scored {
+			height: 100px;
+			width: 100px;
+			margin-left: 250px;
+			color: white;
+		}
+	</style>
+</head>
+<body>	
+	
+	<div class="box">
+		
+		<h1 class="scored">Score <span class="score">0</span></h1>
+
+		<!--ГОРОХИ-->
+	    <img class="shooter" src="peashooter.png"  style="top: 250px; ">		
+		<img class="shooter" src="peashooter.png"  style="top: 350px; ">	
+		<img class="shooter" src="peashooter.png"  style="top: 450px; ">	
+		<img class="shooter" src="peashooter.png"  style="top: 550px; ">
+		<img class="shooter" src="peashooter.png"  style="top: 650px; ">
+
+
+		<!--ЗОМБИ-->
+		<img class="zombies" src="zombie1.png" style="top: 220px">
+		<img class="zombies" src="zombie2.png" style="top: 320px">
+		<img class="zombies" src="zombie2.png" style="top: 420px">
+		<img class="zombies" src="zombie4.png" style="top: 520px">
+		<img class="zombies" src="zombie4.png" style="top: 620px">
+		<h5 class="score"></h5>
+	</div>
+<script>
+	let zombies = document.querySelectorAll('.zombies') 
+	let sh1 = document.querySelectorAll('.shooter') 
+	let r1 = 1200
+	let score = 0
+	zombies[0].onclick = function() {
+		r1 = r1 - 100
+		zombies[0].style.marginLeft = r1 + "px"
+		if (r1 == 500) {
+			alert('eaten')
+			sh1[0].style.display = 'none'
+			score = score + 1
+			document.querySelector('.score').innerHTML = score
+		}
+	}
+	let r2= 1200
+	zombies[1].onclick = function() {
+		r2 = r2 - 100
+		zombies[1].style.marginLeft = r2 + "px"
+		if (r2 == 500) {
+			alert('eaten')
+			sh1[1].style.display = 'none'
+			score = score + 1
+			document.querySelector('.score').innerHTML = score
+			if (score == 5) {
+				alert('you win')
+			}
+
+		}
+	}
+	let r3 = 1200
+	zombies[2].onclick = function() {
+		r3 = r3 - 100
+		zombies[2].style.marginLeft = r3 + "px"
+		if (r3 == 500) {
+			alert('eaten')
+			sh1[2].style.display = 'none'
+			score = score + 1
+			document.querySelector('.score').innerHTML = score
+			if (score == 5) {
+				alert('you win')
+			}
+
+		}
+	}
+	let r4 = 1200
+	zombies[3].onclick = function() {
+		r4 = r4 - 100
+		zombies[3].style.marginLeft = r4 + "px"
+		if (r4 == 500) {
+			alert('eaten')
+			sh1[3].style.display = 'none'
+			score = score + 1
+			document.querySelector('.score').innerHTML = score
+			if (score == 5) {
+				alert('you win')
+			}
+
+		}
+	}
+	let r5 = 1200
+	zombies[4].onclick = function() {
+		r5 = r5 - 100
+		zombies[4].style.marginLeft = r5 + "px"
+		if (r5 == 500) {
+			alert('eaten')
+			sh1[4].style.display = 'none'
+			score = score + 1
+			document.querySelector('.score').innerHTML = score
+			if (score == 5) {
+				alert('you win')
+			}
+		}
+	}
+</script>
+</body>
+</html>
